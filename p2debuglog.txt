@@ -1,1 +1,52 @@
+gcc -g p2final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8b1: file p2final.c, line 35.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p2final.c:35
+35    printf("enter 3 fractions\n");
+(gdb) n
+enter 3 fractions
+36    f1=input_fraction();
+(gdb) n
+3 6
+37    f2=input_fraction();
+(gdb) n
+5 7
+38    f3=input_fraction();
+(gdb) n
+5 9
+39    result=smallest_fraction(f1,f2,f3);
+(gdb) n
+40    output(f1,f2,f3,result);
+(gdb) n
+41    return 0;
+(gdb) n
+42  }(gdb) n
+__libc_start_main (main=0x55d3f96008a9 <main>, argc=1, argv=0x7ffcbcc52608, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffcbcc525f8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+the smallest of 3/6,5/7 and 5/9 is 3/6[Inferior 1 (process 1397) exited normally]
+(gdb) n
+The program is not being run.
+(gdb) 
